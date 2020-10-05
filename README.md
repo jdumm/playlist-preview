@@ -15,7 +15,7 @@ Preview mode stops when you pause playback or at the end of the playlist.
 
 This Python implementation takes advantage of the <a href='https://spotipy.readthedocs.io/'>`Spotipy`</a> client for interacting with Spotify's APIs.
 
-Though not required, the intended flow is to use <a href='IFTTT.com'>IFTTT</a> to trigger an http request through a Google Assistant device.  This request will trigger a Google Cloud Platform <i>Cloud Function</i> to execute `main.py` and the `playlist_preview` function.  This let's us set a phrase such as "Hey Google, start playlist preview" to enter preview mode.
+Though not required, the intended flow is to use <a href='IFTTT.com'>IFTTT</a> to trigger an http request through a Google Assistant device.  This request will trigger a Google Cloud Platform <i>Cloud Function</i> to execute `main.py` and the `playlist_preview` function.  This lets us set a phrase such as "Hey Google, start playlist preview" to enter preview mode.
 
 ## Installation
 Install the required libraries locally:
