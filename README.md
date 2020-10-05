@@ -47,12 +47,12 @@ The first time, a prompt should open on your web browser to give the script the 
 
 ---- Further steps are for voice activation ----
 #### Google Cloud Platform:
-Log in/Sign up for a GCP account at <a href='https://console.cloud.google.com/'>https://console.cloud.google.com/</a>.  Enable billing (you might have to pay a tiny amount to run Cloud Functions after a free trial!).  Find steps to install the gcloud CLI tools.  (I'll assume some user knowledge here as I don't recall all the steps.)
+Log in/Sign up for a GCP account at <a href='https://console.cloud.google.com/'>https://console.cloud.google.com/</a>.  Enable billing (you might have to pay a tiny amount to run Cloud Functions after a free trial!).  Find steps to install the gcloud CLI tools.  (I'll assume some user knowledge/grit here as I don't recall all the steps.)
 
 Deploy the `playlist_preview` function in `main.py` as a GCP Cloud Function:
 ```gcloud functions deploy playlist_preview --allow-unauthenticated --env-vars-file=.env.yaml --timeout=540s```
 
-Note the httpsTrigger url.  Test it out with a Spotify Playlist running, visit that url.  The longest preview mode can run is 9 minutes, limited by max GCP Cloud Function runtime.  
+Note the httpsTrigger url printed out once the function is deployed.  Test it out with a Spotify Playlist running by visiting that httpsTrigger url.  The longest preview mode can run is 9 minutes, limited by max GCP Cloud Function runtime.  
 
 #### IFTTT:
 Visit <a href='ifttt.com'>ifttt.com</a> and sign up/log in.  `Create` --> `Applets`.  Click `If This` and search for Google Assistant --> `Say a simple phrase`.  Give your preferred phrase such as "Start playlist preview" that will act as a trigger.  Under the `url` put your GCP Cloud Function httpsTrigger url.  Use Method=POST.  
